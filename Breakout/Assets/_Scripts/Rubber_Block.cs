@@ -1,15 +1,15 @@
 using UnityEngine;
 
-public class Stone_Block : Blocks
+public class Rubber_Block : Blocks
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        resistance = 5;
+        resistance = 4;
     }
 
     public override void BounceBall()
     {
-        base.BounceBall();
-    }   
+       base.BounceBall();
+    }
 }
