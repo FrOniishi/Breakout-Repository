@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] public int limitX = 24;
-    [SerializeField] public float speed = 40f;
+    [SerializeField] public float speed = 35f;
 
     Vector3 MousePos2D;
     Vector3 MousePos3D;

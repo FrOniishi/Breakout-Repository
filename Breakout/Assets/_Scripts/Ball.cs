@@ -3,7 +3,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     bool isLaunched = false;
-    [SerializeField] public float launchForce = 10f;
+    [SerializeField] public float launchForce = 20f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
