@@ -12,5 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185f3e5f4a4c89042a5efbdd5714102b, type: 3}
   m_Name: Options
   m_EditorClassIdentifier: 
-  ballVelocity: 20
-  LevelDificulty: 0
+  ballVelocity: 1
+  LevelDifficulty: 0
+  ballVelocityEasy: 15
+  ballVelocityMedium: 20
+  ballVelocityHard: 30
+  blockResistanceEasy: 1
+  blockResistanceMedium: 2
+  blockResistanceHard: 3
+  woodResistanceEasy: 2
+  woodResistanceMedium: 3
+  woodResistanceHard: 4
+  stoneResistanceEasy: 3
+  stoneResistanceMedium: 4
+  stoneResistanceHard: 5

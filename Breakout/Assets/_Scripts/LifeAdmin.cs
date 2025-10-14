@@ -26,6 +26,7 @@ public class LifeAdmin : MonoBehaviour
             lifes.RemoveAt(lifes.Count - 1);
             if (lifes.Count == 0)
             {
+                Time.timeScale = 0;
                 GameOverMenu.SetActive(true);
                 return;
             }

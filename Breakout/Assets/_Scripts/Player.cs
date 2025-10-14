@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] public int limitX = 24;
+    [SerializeField] public int limitX = 25;
     [SerializeField] public float speed = 35f;
 
     Vector3 MousePos2D;
@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
         {
             Vector3 direction = collision.contacts[0].point - transform.position;
             direction = direction.normalized;
-            collision.rigidbody.linearVelocity = collision.gameObject.GetComponent<Ball>().launchForce * direction;
+            collision.rigidbody.linearVelocity = collision.gameObject.GetComponent<Ball>().options.GetFinalVelocity() * direction;
         }
     }
 

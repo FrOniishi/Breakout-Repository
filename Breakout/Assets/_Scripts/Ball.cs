@@ -4,12 +4,13 @@ using UnityEngine.Events;
 public class Ball : MonoBehaviour
 {
     bool isLaunched = false;
-    [SerializeField] public float launchForce = 20f;
+    [SerializeField] public float velocity = 20f;
     Vector3 lastPosition = Vector3.zero;
     Vector3 direction = Vector3.zero;
     Rigidbody rb;
     private Border_Control border;
     public UnityEvent ballDestroy;
+    public Options options;
 
     private void Awake()
     {
@@ -41,7 +42,7 @@ public class Ball : MonoBehaviour
             Debug.Log("La bola toco el borde superior");
             direction.y *= -1;
             direction.Normalize();
-            rb.linearVelocity = launchForce * direction;
+            rb.linearVelocity = options.GetFinalVelocity() * direction;
             border.topBorder = false;
             border.enabled = false;
             Invoke("EnableBorder", 0.2f);
@@ -53,7 +54,7 @@ public class Ball : MonoBehaviour
             Debug.Log("La bola toco el borde derecho");
             direction.x *= -1;
             direction.Normalize();
-            rb.linearVelocity = launchForce * direction;
+            rb.linearVelocity = options.GetFinalVelocity() * direction;
             border.rightBorder = false;
             border.enabled = false;
             Invoke("EnableBorder", 0.2f);
@@ -65,7 +66,7 @@ public class Ball : MonoBehaviour
             Debug.Log("La bola toco el borde izquierdo");
             direction.x *= -1;
             direction.Normalize();
-            rb.linearVelocity = launchForce * direction;
+            rb.linearVelocity = options.GetFinalVelocity() * direction;
             border.leftBorder = false;
             border.enabled = false;
             Invoke("EnableBorder", 0.2f);
@@ -77,7 +78,7 @@ public class Ball : MonoBehaviour
             {
                 isLaunched = true;
                 this.transform.SetParent(null);
-                GetComponent<Rigidbody>().linearVelocity = launchForce * Vector3.up;
+                GetComponent<Rigidbody>().linearVelocity = options.GetFinalVelocity() * Vector3.up;
             }
         }
     }

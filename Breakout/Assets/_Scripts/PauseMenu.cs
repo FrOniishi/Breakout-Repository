@@ -10,12 +10,14 @@ public class PauseMenu : MonoBehaviour
     public void ShowPauseMenu ()
     {
         pauseMenuUI.SetActive(true);
+        Time.timeScale = 0f;
         if (pauseMenuUI.activeInHierarchy) optionsMenuUI.SetActive(false);
     }
 
     public void HidePauseMenu ()
     {
-        if (pauseMenuUI != null ) pauseMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void ShowOptionsMenu ()
@@ -24,8 +26,15 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
     }
 
+    public void HideOptionsMenu ()
+    {
+        optionsMenuUI.SetActive(false);
+        pauseMenuUI.SetActive(true);
+    }
+
     public void BackToMainMenu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
 }

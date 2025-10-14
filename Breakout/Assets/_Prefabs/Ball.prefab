@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f96821bbefeea864b9b418af4b8615ac, type: 2}
+  - {fileID: 2100000, guid: c067c35a61da74445b8ab800dcd2331c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 796b4035171dddb48b657412ed7f176e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  launchForce: 20
+  velocity: 20
   ballDestroy:
     m_PersistentCalls:
       m_Calls:
@@ -166,6 +166,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  options: {fileID: 11400000, guid: 9348c6ce3a1ac694a9ae29b9e7d46f2e, type: 2}
 --- !u!114 &2253753804190086611
 MonoBehaviour:
   m_ObjectHideFlags: 0
