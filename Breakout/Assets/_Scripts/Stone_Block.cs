@@ -5,7 +5,16 @@ public class Stone_Block : Blocks
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        resistance = 5;
+        resistance = options.GetStoneResistance();
+    }
+
+    void Update()
+    {
+        if (resistance <= 0)
+        {
+            ScoreUp.Invoke();
+            Destroy(this.gameObject);
+        }
     }
 
     public override void BounceBall(Collision collision)

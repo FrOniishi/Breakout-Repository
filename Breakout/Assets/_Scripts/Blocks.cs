@@ -4,7 +4,8 @@ using UnityEngine.Events;
 
 public class Blocks : MonoBehaviour
 {
-    public int resistance = 1;
+    public int resistance;
+    public Options options;
 
     public UnityEvent ScoreUp;
 
@@ -20,14 +21,14 @@ public class Blocks : MonoBehaviour
     {
         Vector3 direction = collision.contacts[0].point - transform.position;
         direction = direction.normalized;
-        collision.rigidbody.linearVelocity = collision.gameObject.GetComponent<Ball>().launchForce * direction;
+        collision.rigidbody.linearVelocity = collision.gameObject.GetComponent<Ball>().options.GetFinalVelocity() * direction;
         resistance--;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        resistance = options.GetBlockResistance();
     }
 
     // Update is called once per frame

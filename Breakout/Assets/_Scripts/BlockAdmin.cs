@@ -8,6 +8,7 @@ public class BlockAdmin : MonoBehaviour
     {
         if (transform.childCount == 0)
         {
+            Time.timeScale = 0;
             EndLevelMenu.SetActive(true);
         }
     }
