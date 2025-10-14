@@ -8,8 +8,8 @@ public class Stone_Block : Blocks
         resistance = 5;
     }
 
-    public override void BounceBall()
+    public override void BounceBall(Collision collision)
     {
-        base.BounceBall();
+        base.BounceBall(collision);
     }   
 }
